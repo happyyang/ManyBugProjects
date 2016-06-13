@@ -33,7 +33,7 @@ import butterknife.Bind;
  * ＊创建者：赵然 on 16/6/13 15:53
  * ＊
  */
-public class SwipRefreshOrDeleteActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener,IsItemCanSwipInterface{
+public class SwipRefreshOrDeleteActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener,IsItemCanSwipInterface,BasePagingFrameAdapter.PagingListener {
 
     @Bind(R.id.rl_swipactivity_refreshlay)
     RefreshLayout refreshLayout;
@@ -41,6 +41,8 @@ public class SwipRefreshOrDeleteActivity extends BaseActivity implements SwipeRe
     SwipeMenuListView swipeMenuListView;
 
     private SwipViewAdapter adapter;
+    private int pageCount;
+    private int maxPage = 3;
 
     @Override
     public void loadLayout() {
@@ -52,7 +54,7 @@ public class SwipRefreshOrDeleteActivity extends BaseActivity implements SwipeRe
     public void logic() {
         showDefaultTittle("上下拉带左滑删除");
 
-        adapter = new SwipViewAdapter(getContext(),getData());
+        adapter = new SwipViewAdapter(getContext(), new ArrayList<ProjectItemEntity>());
         swipeMenuListView.setMenuCreator(new SwipeMenuCreator() {
             @Override
             public void create(SwipeMenu menu) {
@@ -72,12 +74,14 @@ public class SwipRefreshOrDeleteActivity extends BaseActivity implements SwipeRe
         });
 
         swipeMenuListView.setAdapter(adapter);
+        adapter.setOnPagingListener(this);
         //设置条目是否可以左滑删除
         swipeMenuListView.setItemCanSwipInterface(this);
     }
 
     @Override
     public void loadListener() {
+        refreshLayout.setOnRefreshListener(this);
         swipeMenuListView.setOnMenuItemClickListener(new OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
@@ -107,6 +111,15 @@ public class SwipRefreshOrDeleteActivity extends BaseActivity implements SwipeRe
     @Override
     public void onRefresh() {
 
+        pageCount = 0;
+        refreshLayout.setRefreshing(true);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        adapter.resetData(getData());
+        refreshLayout.setRefreshing(false);
     }
 
     /**
@@ -130,6 +143,30 @@ public class SwipRefreshOrDeleteActivity extends BaseActivity implements SwipeRe
 
         //TODO 添加判断逻辑 确认能否弹出删除按钮
         return position % 2 == 0 ? true : false;
+    }
+
+    @Override
+    public void onNextPageRequest(BasePagingFrameAdapter adapter, int page) {
+
+
+        if (pageCount == maxPage){
+            adapter.noMorePage();
+        }else{
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            adapter.loadMore(getData());
+            pageCount++;
+            if (pageCount==maxPage){
+
+                adapter.noMorePage();
+            }else{
+
+                adapter.mayHaveNextPage();
+            }
+        }
     }
 
     /**
