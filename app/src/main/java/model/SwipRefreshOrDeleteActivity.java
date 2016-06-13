@@ -181,6 +181,7 @@ public class SwipRefreshOrDeleteActivity extends BaseActivity implements SwipeRe
 
         @Override
         protected View onViewCreate(int position, LayoutInflater inflater, ViewGroup parent) {
+            //左滑删除的item布局 需要外层包裹布局 否则可能会显示不正常 第三方的控件 没有细研究
             return inflater.inflate(R.layout.item_mainacitivity,parent,false);
         }
 
