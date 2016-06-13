@@ -60,7 +60,6 @@ public abstract class BaseActivity extends FragmentActivity implements ActivityI
 	 */
 	private ProgressDialog mLoadingDialog;
 
-
 	/**
 	 * 请求错误信息的处理
 	 */
@@ -78,7 +77,7 @@ public abstract class BaseActivity extends FragmentActivity implements ActivityI
 		context = this;
 		setCustomerView(R.layout.activity_base);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // 设置禁止横屏
-		mGroupContent = (ViewGroup) findViewById(R.id.activity_content);
+		mGroupContent = (ViewGroup) findViewById(R.id.fl_baseractivity_content);
 
 		init();
 
@@ -108,8 +107,8 @@ public abstract class BaseActivity extends FragmentActivity implements ActivityI
 		initTitleBarAndExceptionView();
 	}
 	private void initTitleBarAndExceptionView() {
-		mGroupContent = (ViewGroup)findViewById(R.id.activity_content);
-		tittle = (CustomTittleView) findViewById(R.id.title_bar);
+		mGroupContent = (ViewGroup)findViewById(R.id.fl_baseractivity_content);
+		tittle = (CustomTittleView) findViewById(R.id.title_baseactivity_tittleview);
 		tittle.setViewBackgroundColor(getResources().getColor(R.color.color_tittle_bg));
 		exceptionView = (CommonExceptionView)findViewById(R.id.cev_base_exception);
 		exceptionView.setOnClickListener(new OnClickListener() {

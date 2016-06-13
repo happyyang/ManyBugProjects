@@ -158,8 +158,8 @@ public abstract class BaseFragment extends Fragment implements ActivityInterface
 
 	protected abstract void lazyLoad();
 	protected void initTitleBarView() {
-		mGroupContent = (ViewGroup) mContentView.findViewById(R.id.activity_content);
-		tittle = (CustomTittleView) findViewById(R.id.title_bar);
+		mGroupContent = (ViewGroup) mContentView.findViewById(R.id.fl_baseractivity_content);
+		tittle = (CustomTittleView) findViewById(R.id.title_baseactivity_tittleview);
 		exceptionView = (CommonExceptionView) findViewById(R.id.cev_base_exception);
 		tittle.setViewBackgroundResource(R.drawable.oneline_downbkg_white);
 	}
