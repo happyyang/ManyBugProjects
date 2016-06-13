@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bone.com.manybugproject.view.RefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_swipactivity_refreshlay"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <bone.com.manybugproject.view.swiplistview.SwipeMenuListView
+        android:id="@+id/smlv_swipactivity_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</bone.com.manybugproject.view.RefreshLayout>
