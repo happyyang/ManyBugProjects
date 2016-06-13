@@ -1,0 +1,11 @@
+<resources>
+    <declare-styleable name="CustomTittleView">
+        <attr name="leftDrawableLeft" format="reference" />
+        <attr name="rightDrawableRight" format="reference" />
+        <attr name="leftTextText" format="reference|string" />
+        <attr name="centerTextText" format="reference|string" />
+        <attr name="rightTextText" format="reference|string" />
+        
+    </declare-styleable>
+    
+</resources>

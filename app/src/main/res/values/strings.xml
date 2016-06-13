@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ManyBugProject</string>
+    <string name="string_netconnect_nonet">当前网络不可用，请检查网络连接</string>
+    <string name="string_netconnect_timeout">网络连接超时，请重试</string>
+</resources>

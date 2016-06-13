@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <!-- tittle栏 背景颜色-->
+    <color name="color_tittle_bg">#ffffff</color>
+
+    <!--背景色为白色时 分割线颜色 -->
+    <color name="color_tittle_divider1">#f2f2f2</color>
+
+    <!-- 整体背景色-->
+    <color name="color_global_background">#f2f2f2</color>
+    <!-- 底部栏颜色-->
+    <color name="color_bottomviewcolor">#e5ffffff</color>
+
+
+    <!-- 填充红色按钮正常颜色-->
+    <color name="color_btn_bgandtext_normal">#ee4747</color>
+    <!-- 填充红色按钮按下颜色-->
+    <color name="color_btn_bgandtext_pressed">#d02e2e</color>
+
+
+    <!-- 按钮文字颜色-白色-->
+    <color name="color_btn_whitetext">#eeeeee</color>
+
+    <!-- 黑色-->
+    <color name="color_black">#000000</color>
+    <color name="color_white">#ffffff</color>
+    <!-- 透明 -->
+    <color name="color_transparent">#00000000</color>
+    <color name="color_global_colorscheme">@color/color_white</color>
+
+    <color name="abc">#313131</color>
+    <!-- 填充 灰色按钮颜色-->
+
+
+    <!-- 文字色-->
+    <color name="color_text_deepcolor">#191919</color>
+    <color name="color_text_mediumcolor">#555555</color>
+    <color name="color_text_lightcolor">#bebebe</color>
+    <color name="color_btn_gray">#9d9d9d</color>
+    <color name="color_blue">#55a947</color>
+
+    <color name="color_text_gold">#cba163</color>
+
+    <color name="color_btn_black">#333333</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="color_divider_e6">#e6e6e6</color>
+    <color name="color_background_ef">#efefef</color>
+    <color name="divider_color">#CBB39F</color>
+    <!--背景色为#f2f2f2时 分割线颜色 -->
+    <color name="color_background_dividere5">#e5e5e5</color>
+    <!-- 红色文字 -->
+    <color name="color_text_red">#dc4040</color>
+</resources>
